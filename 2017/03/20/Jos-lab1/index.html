@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+    <!-- 
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.3.0 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+            Jos-lab1 | 
+        
+        Descatles&#39;s Blog
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Descatles">
+    <meta name="description" content="start from zero">
+    <meta name="keywords" content="Descatles">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Descatles&#39;s Blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Jos-lab1 | Descatles&#39;s Blog">
+    <meta property="og:description" content="start from zero">
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/css/material.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/queue.js"></script>
+
+    <!-- UC Browser Compatible -->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write("<link rel=\"stylesheet\" href=\"/css/uc.css\">");
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    
+
+    
+
+    <!-- Bing Background -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+        
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/thumbnail/joslab1.jpg)">
+    
+            <p class="article-headline-p">
+                Jos-lab1
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/myavatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Descatles</strong>
+        <span>3月 20, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Jos-lab1&url=http://yoursite.com//2017/03/20/Jos-lab1/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Descatles&#39;s Blog&title=Jos-lab1&summary=start from zero&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/03/20/Jos-lab1/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p><strong>jos的启动过程总结如下：</strong></p>
+<p>首先是BIOS加载。然后从BIOS跳转至Boot loader。Boot loader 做了一些初始化工作如禁止中断，打开 A20地址线等，然后载入GDT，并从实模式跳转到32位指令的保护模式下。在初始化了寄存器后，读取硬盘第一页上的ELF文件，将内核载入内存，最终进入内核。</p>
+<p>内核首先执行 entry.S 文件，entry.S 先将寻址模式从32位段模式转为32位段页模式，然后初始化栈空间，跳转到 i386_init中，接下来的过程都能够在终端中反映出来，在exercise中也会涉及到。</p>
+<p>其中，BIOS部分是由QEMU提供的，不属于JOS。</p>
+<p><strong>以下是对此次lab中一些问题以及设计的回答：</strong></p>
+<p><strong><em>(1)    At what point does the processor start executing 32-bit code? What exactly causes the switch from 16- to 32-bit mode?</em></strong></p>
+<pre><code>  # Jump to next instruction, but in 32-bit code segment.
+  # Switches processor into 32-bit mode.
+
+  ljmp$PROT_MODE_CSEG, $protcseg
+
+.code32 # Assemble for 32-bit mode
+</code></pre><p> 从<code>.code32</code>开始，处理器执行32位的代码。<br><code>ljmp    $PROT_MODE_CSEG, $protcseg</code>指令使得从16位模式切换至32位模式。</p>
+<p><strong><em>(2)    What is the last instruction of the boot loader executed, and what is the first instruction of the kernel it just loaded?</em></strong></p>
+<p><code>(void (*)(void)) (ELFHDR-&gt;e_entry))();</code>这行代码是boot loader最后执行的代码，而最后一条执行的汇编指令为<code>call *0x10018</code><br>。Kernel刚加载时的第一条指令为<code>movw   $0x1234,0x472</code></p>
+<p><strong><em>(3)    How does the boot loader decide how many sectors it must read in order to fetch the entire kernel from disk? Where does it find this information?</em></strong></p>
+<p>Bootloader 在内核的ELF文件头中可以获得关于需要读多少sectors的信息。</p>
+<p><strong>Exercise 5.</strong></p>
+<p>在从BIOS进入boot loader时，这8个words都是0。在从boot loader进入kernel后，则有真正的数据了。因为在第一个断点时还没有将内核代码载入至内存，第二个断点时则已经载入进去。在第二个断点时的内容是elf内核文件的内容。</p>
+<p><strong>Exercise 6.</strong></p>
+<p>可以发现，修改只对相对跳转的语句有影响。</p>
+<p><strong>Exercise 7.</strong></p>
+<p><code>Jmp *%eax</code> 是旧的mapping依旧存在时出错的第一条指令。</p>
+<p><strong>Exercise 8.</strong></p>
+<p>照着前面的写即可，具体代码如下</p>
+<pre><code>case &apos;o&apos;:
+            // Replace this with your code.
+            // display a number in octal form and the form should begin with &apos;0&apos;
+            putch(&apos;0&apos;, putdat);
+            num = getuint(&amp;ap, lflag);
+            base = 8;
+            goto number;
+</code></pre><p><strong>Exercise 9.</strong></p>
+<p>从<code>init.c</code>中的代码<code>cprintf(&quot;show me the sign: %+d, %+d\n&quot;, 1024, -1024);</code>中了解到，就是在有加号的情况下需要把正或负号全表示出来。所以只需加入一个对是否是加号的判断，若是，则在数字是正数时在前面加上正号。</p>
+<p><strong>Exercise 10.</strong></p>
+<p>首先要判断要写入的值的指针是否是空指针，并判断指针要指向的值是否已溢出，若是，则输出已提供的错误信息。最后赋值。</p>
+<p><strong>Exercise 11.</strong></p>
+<p>首先判断padc是否是’-‘，如果不是，按原来的函数处理，若是，进入新的函数。新的函数如下</p>
+<pre><code>static void
+printnum2(void (*putch)(int, void*), void *putdat,
+     unsigned long long num, unsigned base, int width, int padc)
+{
+while(num&gt;=base)
+    {
+   putch(&quot;0123456789abcdef&quot;[num % base], putdat);
+       num=num/base;
+       width--;
+    } 
+
+    // then print this (the least significant) digit
+    putch(&quot;0123456789abcdef&quot;[num % base], putdat);
+while (--width &gt; 0)
+    {
+      putch(&apos; &apos;, putdat);
+    }    
+}
+</code></pre><p>即先输出数字的表示，不满的部分再用空格填补。</p>
+<p><strong>Exercise 14.</strong></p>
+<p>代码如下</p>
+<pre><code>uint32_t *ebp = (uint32_t *) read_ebp();
+while (ebp != NULL) 
+{
+    uint32_t* eip=(uint32_t*)(ebp+1);
+    cprintf(&quot;  eip %08x  ebp %08x  &quot;,*eip, ebp);
+    cprintf(&quot; args&quot;);
+    int i=0;
+    for(i=0;i&lt;5;i++)
+    {
+        cprintf(&quot;  %08x&quot;,*((uint32_t*)(ebp+2+i)));
+    }
+    cprintf(&quot;\n&quot;);
+    ebp = (uint32_t *) (*ebp);    
+}    
+</code></pre><p>用<code>read_ebp()</code>函数得到当前的ebp位置后，相对ebp向上得到eip以及各参数值，最后从ebp寄存器得到外部函数的保存的ebp位置，循环指指针为空。需要注意的是打印的格式。</p>
+<p><strong>Exercise 15.</strong></p>
+<p>这个练习主要的部分只要在上个练习的循环中加入如下的代码：</p>
+<pre><code>struct Eipdebuginfo info;
+debuginfo_eip(*eip, &amp;info);
+cprintf(&quot;\t%s:%d: %.*s+%d\n&quot;, info.eip_file,
+  info.eip_line,info.eip_fn_namelen,
+         info.eip_fn_name,*eip-info.eip_fn_addr);
+</code></pre><p>只是对<code>Eipdebuginfo</code>类的一些使用以及打印，应该不需要赘述。</p>
+<pre><code>stab_binsearch(stabs, &amp;lline, &amp;rline, N_SLINE, addr);
+if (lline&lt;=rline)
+{
+    info-&gt;eip_line = stabs[lline].n_desc;
+}
+else 
+{
+    info-&gt;eip_line = -1;
+}
+</code></pre><p>在<code>kdebug.c</code>中也要加入如下查找行号的代码。</p>
+<p>为了能直接使用<code>backtrace</code>命令而不只是通过测试，需要在<code>Command</code>中注册一下</p>
+<p><strong>Exercise 16.</strong></p>
+<p>为了这个练习需要把<code>start_overflow()</code>中的return address替换为<code>do_overflow()</code>的地址，但因为要保证正常退出，需要把return address+4的地方填上本来应该返回的地址，以便从<code>do_overflow()</code>返回到本来应该返回的<code>overflow_me()</code></p>
+<p>代码如下：</p>
+<pre><code>char str[256] = {};
+int nstr = 0;
+char *pret_addr;
+uint32_t addr = (uint32_t) do_overflow;    
+pret_addr = (char *) read_pretaddr();
+int i;
+for(i=0;i&lt;4;i++)
+{
+    uint32_t addr1;
+    memset(str,0xd,256);
+    addr1=(uint32_t)((*(pret_addr+i))&amp;0xff);
+    str[addr1]=&apos;\0&apos;;
+    cprintf(&quot;%s%n&quot;, str, pret_addr+4+i);
+    memset(str,0xd,256);
+    addr1=(uint32_t)((addr &gt;&gt; (8*i)) &amp; 0xff);
+    str[addr1]=&apos;\0&apos;;
+    cprintf(&quot;%s%n&quot;, str, pret_addr+i);
+}
+</code></pre><p><strong>Exercise 17.</strong></p>
+<p>实际上就是调用rdtsc里的函数<code>read_tsc()</code>，计算下执行命令之间的cycle数并输出。也要在Command中注册下。</p>
+<p>代码如下：</p>
+<pre><code>int
+mon_time(int argc, char **argv, struct Trapframe *tf)
+{
+    uint64_t start;
+    uint64_t end;
+    uint64_t time;
+
+    // Lookup and invoke the command
+    if (argc == 1) {
+        cprintf(&quot;time [command]\n&quot;);
+        return 0;
+    }
+    int i=0;
+    for (i = 0; i &lt; NCOMMANDS; i++)
+    {
+        if (strcmp(argv[1], commands[i].name) == 0) 
+        {
+            argc=argc-1;
+            argv=argv+1;
+            start=read_tsc();
+            commands[i].func(argc,argv,tf);
+            end=read_tsc();
+            time=end-start;
+            cprintf(&quot;%s cycles: %llu\n&quot;,argv[0],time);
+            return 0;
+        }
+    }
+    cprintf(&quot;Unknown command &apos;%s&apos;\n&quot;, argv[1]);
+    return 0;
+}
+</code></pre>
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+    <!-- 使用 DISQUS_CLICK -->
+    <div id="disqus-comment">	
+        <div id="disqus_thread"></div>
+<!-- include js -->
+<script src="/js/ripple.js"></script>
+
+<!-- add animation -->
+<style>
+        .ripple-container {
+        }
+        .ripple-container .ripple{
+            background-color: rgba(255,255,255,0.4);
+            animation: ripple 2s forwards cubic-bezier(0, 0, 0.2, 1);
+        }
+        @keyframes ripple {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            80% {
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+		.disqus_click_btn {
+            background-color: dodgerblue;
+            color: white;
+            padding: 10px 20px;
+            border:0;
+            font-size: 14px;
+            cursor: pointer
+        }
+</style>
+	
+<!-- add data-ripple attribute -->
+<div class="btn_click_load"> 
+    <button class="disqus_click_btn" data-ripple>阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
+</div>
+	
+<script>
+    // add effect to elements
+    Array.prototype.forEach.call(document.querySelectorAll('[data-ripple]'), function(element){
+        // find all elements and attach effect
+        new RippleEffect(element); // element is instance of javascript element node
+    });
+</script>
+
+<script>
+    $('.btn_click_load').click(function() {  //click to load comments
+        var disqus_config = function () {
+            this.page.url = 'http://yoursite.com/2017/03/20/Jos-lab1/index.html';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//null.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+  	
+
+    </div>
+    <style>
+        #disqus-comment{
+            background-color: #eee;
+            padding: 2pc;
+        }
+    </style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/04/05/Jos-lab2/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/03/20/hello-world/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/home.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/myavatar.png" alt="Descatles's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        zephon-z@sjtu.edu.cn
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="http://mail.sjtu.edu.cn/" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/" target="_self">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        
+
+
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="http://weibo.com/u/5409070612/home?wvr=5&amp;lf=reg" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-weibo.png);">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/Descatles" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.png);">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/wei-lai-shi/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-zhihu.png);">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+        <a href="http://space.bilibili.com/8087472/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-bilibili.png);">
+                <span class="visuallyhidden">Bilibili</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;Descatles's Blog
+        </div>
+
+        
+
+        
+    
+</footer>
+
+
+                    <!-- Import File -->
+<script src="/js/lazyload.min.js"></script>
+<script src="/js/js.min.js"></script>
+<script src="/js/nprogress.js"></script>
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    <script src="/js/smoothscroll.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Swiftye -->
+
+
+<!-- Local Search-->
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+
+                </main>
+            </div>
+        </body>
+    
+</html>

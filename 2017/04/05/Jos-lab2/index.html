@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+    <!-- 
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.3.0 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+            Jos-lab2 | 
+        
+        Descatles&#39;s Blog
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Descatles">
+    <meta name="description" content="start from zero">
+    <meta name="keywords" content="Descatles">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Descatles&#39;s Blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Jos-lab2 | Descatles&#39;s Blog">
+    <meta property="og:description" content="start from zero">
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/css/material.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/queue.js"></script>
+
+    <!-- UC Browser Compatible -->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write("<link rel=\"stylesheet\" href=\"/css/uc.css\">");
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    
+
+    
+
+    <!-- Bing Background -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+        
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/thumbnail/joslab2.jpg)">
+    
+            <p class="article-headline-p">
+                Jos-lab2
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/myavatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Descatles</strong>
+        <span>4月 05, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Jos-lab2&url=http://yoursite.com//2017/04/05/Jos-lab2/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Descatles&#39;s Blog&title=Jos-lab2&summary=start from zero&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/04/05/Jos-lab2/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>这次lab主要的工作是在JOS 操作系统中实现内存分页管理的功能。除了第一个challenge外其他代码都在 pmap.c 文件中完成。</p>
+<p>这次的 lab（challenge除外）可以分为两部分部分：</p>
+<p>1、物理页面管理和页表管理。前者强调对机器拥有的物理内存的管理，包括建立对应的数据结构、处理分配和回收动作等。</p>
+<p>   需要完成以下函数：</p>
+<ul>
+<li>boot_alloc()</li>
+<li>mem_init()</li>
+<li>page_init()</li>
+<li>page_alloc()</li>
+<li>page_free()</li>
+</ul>
+<p>2、利用Intel x86 系列处理器的页式地址管理功能，完成（虚拟）线性地址到物理地址的转换，包括建立页目录、页表等。</p>
+<p>需要完成以下函数：</p>
+<ul>
+<li>pgdir_walk()</li>
+<li>boot_map_region()</li>
+<li>page_lookup()</li>
+<li>page_remove()</li>
+<li>page_insert()</li>
+<li>boot_map_region_large（）</li>
+</ul>
+<p>对于上述所涉及的函数（boot_map_region_large除外）都只需要照着文件中的注释写即可，<br>故不多做解释。</p>
+<p>接着上一个lab的内容，并调用 i386_init()函数，而 i386_init()函数在将自己的 BSS 区域清零后，调用 cons_init()函数设置好屏幕显示设备为 cprintf 的运行做好准备后就调用 mem_init()函数进入lab2。</p>
+<p>lab中所涉及到的内存的分页机制包含页面管理和页表管理两个部分。对于前一个部分，主要是讨论内核如何在初始物理内存中分配空间和建立合理的数据结构来对物理页面进行管理，而后一个部分主要是讨论如何建立两级页目录和页表，从而在开启 x86 的分页管理后仍然能够进行合理的逻辑地址到物理地址的转换。</p>
+<p><strong>页面管理</strong></p>
+<p>这个Page是这个lab中很重要的一个单项链表结构，用来管理物理内存。其中pp_link指向链表的下一个单元的地址，pp_ref则表示页表结构中映射到该段物理页的entry数量，通过该结构可以完成这个lab的很多事情。</p>
+<pre><code>struct Page {
+    struct Page *pp_link;
+    uint16_t pp_ref;
+};
+</code></pre><p>在 JOS 中，页面操作主要由 page_alloc()以及page_free()完成。同时，还要进行页面的初始化。由于系统的物理内存由 4KB 大小的很多物理页面组成，同时这些物理页面与页面管理单向链表中的管理结点有一一对应的关系，根据一个物理页的首地址可以计算出它所对应的管理结点的位置，可以用 pages[下标]来索引。在页面管理数据结构初试化的时候，系统会把所有管理结点加入页面管理链表，但是，由于有些物理内存已经被 x86 系统所使用或者预先放了一些系统数据。同时，有些内存已为内核本身所占用，这些内存不能把它们当自由页面分配出去。所以，在建立好页面管理链表后，需要将这些已经被使用的内存对应的页面管理结点从链表中移出。page_alloc()函数被调用后，将取页面管理双向链表中的第一个管理结点，并将该结点返回出去，需要注意的是，由于无法确定得到的物理内存页面是否是“干净”的，如果已经有数据，就会对之后的程序造成影响。所以得到页面管理结点后，要将它所对应的物理页面清零。</p>
+<p><strong>页表管理</strong></p>
+<p>lab中有提到逻辑地址（ Virtual Address）、线性地址(Linear Address)和物理地址(Physical Address)。逻辑地址是指程序在编译连接后，变量名字等的符号地址， 在 JOS 系统中的内核部分， 该地址是以 KERNBASE（默认等于 0xF0000000，实际上可以根据具体的情况加以修改）；线性地址是指经过 x86 保护模式的段地址变换后的地址，该变换的过程是 逻辑地址+段首地址；物理地址是指内存存储单元的编址，如 1GB<br>的内存，它的物理编址是从 0x00000000 到 0x40000000。</p>
+<p>关于线性地址的转换，在ics课上已经讲过，就不说了。</p>
+<p>关于第二部分的函数，主要就是用于处理对页目录、页表和数据页的关联。这里稍微解释一下：</p>
+<p> <code>pte_t *pgdir_walk(pde_t *pgdir, const void *va, int create)</code> 根据输入的虚拟地址va，返回它在二级页表中对应的表项。如果页不存在，根据其中的create参数，决定是否要为这个虚拟地址分配物理页。</p>
+<p><code>static void boot_map_region(pde_t *pgdir, uintptr_t va, size_t size, physaddr_t pa, int perm)</code>将从va开始的size个byte映射到pa。</p>
+<p><code>struct Page *page_lookup(pde_t *pgdir, void *va, pte_t **pte_store)</code>根据va，返回对应的页表的页，如果有pte_store，则将对应的pte的位置保存pte_store上。</p>
+<p><code>void page_remove(pde_t *pgdir, void *va)</code>删除给定va对应的页表，同时也要清除对应的TLB。</p>
+<p><code>int page_insert(pde_t *pgdir, struct Page *pp, void *va, int perm)</code>这个函数将虚拟地址va映射到pp对应的页表上，如果没有分配就直接映射va，如果页表已分配先判断是否映射va相同的虚拟地址，如果是就只删除对应的TLB，如果不是就直接remove。</p>
+<p><strong>部分函数代码</strong></p>
+<p>因为代码过多，只贴出其中几个。其余基本代码可以在提交的代码中查看。</p>
+<p>关于boot_map_region_large（）</p>
+<pre><code>  uint32_t cr4;
+  cr4 = rcr4();
+  cr4 |= CR4_PSE;
+  lcr4(cr4);
+  boot_map_region_large(kern_pgdir, KERNBASE, 64, 0, PTE_P | PTE_W);
+
+
+static void
+boot_map_region_large(pde_t *pgdir, uintptr_t va, size_t size, physaddr_t pa, int perm)
+{
+    uint32_t i=0;
+    while(i&lt;size)
+    {
+        kern_pgdir[PDX(va)] = pa | perm | PTE_PS;
+        va=va+PTSIZE;
+        pa=pa+PTSIZE;
+        i++;
+    }
+}
+</code></pre><p>需要用这个boot_map_region_large（）替代boot_map_region()。先开启CR4中的PSE位以此使用PDE的PS位。通过分配PDE，替代了二级页表的分配。通过计算可以得出只需要64的PDE表项。</p>
+<p><strong>Challenge1(1)</strong></p>
+<p>主要是要实现一个showmapping的命令，改命令可以打出指定范围内每个页所对应的权限位</p>
+<p>主要实现如下，只需要遍历一下范围地址里在二级页表里的entry并输出权限位即可。</p>
+<pre><code>int
+showmappings(int argc, char **argv, struct Trapframe *tf)
+{
+    if (argc!=3)
+    {
+        cprintf(&quot;Usage: showmappings 0xbegin_addr 0xend_addr\n&quot;);
+        return 0;
+    }
+    uint32_t beg_addr = atoi(argv[1]);
+    uint32_t end_addr = atoi(argv[2]);
+    while(beg_addr &lt;= end_addr) 
+    {
+        pte_t *pte = pgdir_walk(kern_pgdir, (void *) beg_addr, 1);
+        if (!pte) 
+        {
+            panic(&quot;out of the memory&quot;);
+        }
+        else if (*pte &amp; PTE_P)
+        {
+            cprintf(&quot;page at %x has the permission that PTE_P: %x, PTE_W: %x, PTE_U: %x\n&quot;, beg_addr, *pte&amp;PTE_P, *pte&amp;PTE_W, *pte&amp;PTE_U);
+        } 
+        else 
+        {
+            cprintf(&quot;no that page: %x\n&quot;, beg_addr);
+        }    
+        beg_addr=beg_addr+PGSIZE;
+    }
+    return 0;
+}
+</code></pre><p><strong>Challenge1(2)</strong></p>
+<p>实现对一个地址页表权限位的设置，清零与更改，也不难。</p>
+<p>得到一个地址所对应的二级页表后，根据所输入的指令更改页表里的权限位，实现如下：</p>
+<pre><code>int 
+setmapping(int argc, char **argv, struct Trapframe *tf) 
+{
+    if (argc!=4)
+    {
+        cprintf(&quot;Usage: setmapping 0xaddr [0|1|2 : set or clear or change ] [P|W|U]\n&quot;);
+        return 0;
+    }
+    uint32_t addr = atoi(argv[1]);
+    pte_t *pte = pgdir_walk(kern_pgdir, (void *)addr, 1);
+    cprintf(&quot;Before setmapping :PTE_P: %x, PTE_W: %x, PTE_U: %x\n&quot;, *pte&amp;PTE_P, *pte&amp;PTE_W, *pte&amp;PTE_U);
+    uint32_t perm = 0;
+    if (argv[3][0] == &apos;P&apos;)
+    {
+        perm = PTE_P;
+    }
+    else if (argv[3][0] == &apos;W&apos;)
+    {
+        perm = PTE_W;
+    }
+    else
+    {
+        perm = PTE_U;
+    }
+    if (argv[2][0] == &apos;0&apos;)
+    {
+        *pte = *pte|perm;
+    }
+    else if(argv[2][0]==&apos;1&apos;)
+    {
+        *pte = *pte &amp; ~perm;
+    }
+    else if(argv[2][0]==&apos;2&apos;)
+    {
+        *pte = *pte^perm;
+    }
+    cprintf(&quot;After setmapping :PTE_P: %x, PTE_W: %x, PTE_U: %x\n&quot;, *pte&amp;PTE_P, *pte&amp;PTE_W, *pte&amp;PTE_U);
+    return 0;
+}
+</code></pre><p><strong>Challenge1(3)</strong></p>
+<p>把地址范围内内存里的内容打印出来，并且支持虚拟地址与物理地址。如果是物理地址，转换为虚拟地址即可。</p>
+<pre><code>int 
+mon_dump(int argc, char **argv, struct Trapframe *tf) 
+{
+    if (argc !=4)
+    {
+        cprintf(&quot;Usage: dump [P|V] 0xbegin_addr 0xend_addr\n&quot;);
+        return 0;
+    }
+    uint32_t beg_addr = atoi(argv[2]);
+    uint32_t end_addr = atoi(argv[3]);
+    if(argv[1][0]==&apos;P&apos;)
+    {
+        if(PGNUM(beg_addr)&gt;=npages||PGNUM(end_addr)&gt;=npages)
+        {
+            panic(&quot;Wrong address&quot;);
+        }
+        beg_addr=(uint32_t)KADDR(((physaddr_t)beg_addr));
+        end_addr=(uint32_t)KADDR(((physaddr_t)end_addr));
+    }
+    void** addr = (void**) beg_addr;
+    int i=0;
+    for (; beg_addr &lt; end_addr;beg_addr++)
+    {
+        cprintf(&quot; contents of %x is %x\n&quot;, beg_addr, addr[i]);
+        i++;
+    }
+    return 0;
+}
+</code></pre><p><strong>Challenge2</strong></p>
+<p>实现一个称作alloc_page_with_color的函数，返回一个所需要的color的页。这个函数需要遍历page_free_list直到得到所需要的color的页，并返回。</p>
+<pre><code>struct Page *alloc_page_with_color(int alloc_flags, int color)
+{
+    if(!page_free_list)
+    {  
+    return NULL;  
+    }
+       struct Page* page = page_free_list; 
+    struct Page* result; 
+    while(page)
+    {
+        if((((int)page2pa(page))&amp;4) ==color)
+        {
+            page-&gt;pp_link = 0; 
+            result=page;
+            page= page-&gt;pp_link;  
+            if(alloc_flags &amp; ALLOC_ZERO)
+            {  
+                memset(page2kva(result), 0, PGSIZE);  
+            }
+            return result;
+        }
+        page=page-&gt;pp_link;
+    }  
+    return NULL;
+}
+</code></pre>
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+    <!-- 使用 DISQUS_CLICK -->
+    <div id="disqus-comment">	
+        <div id="disqus_thread"></div>
+<!-- include js -->
+<script src="/js/ripple.js"></script>
+
+<!-- add animation -->
+<style>
+        .ripple-container {
+        }
+        .ripple-container .ripple{
+            background-color: rgba(255,255,255,0.4);
+            animation: ripple 2s forwards cubic-bezier(0, 0, 0.2, 1);
+        }
+        @keyframes ripple {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            80% {
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+		.disqus_click_btn {
+            background-color: dodgerblue;
+            color: white;
+            padding: 10px 20px;
+            border:0;
+            font-size: 14px;
+            cursor: pointer
+        }
+</style>
+	
+<!-- add data-ripple attribute -->
+<div class="btn_click_load"> 
+    <button class="disqus_click_btn" data-ripple>阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
+</div>
+	
+<script>
+    // add effect to elements
+    Array.prototype.forEach.call(document.querySelectorAll('[data-ripple]'), function(element){
+        // find all elements and attach effect
+        new RippleEffect(element); // element is instance of javascript element node
+    });
+</script>
+
+<script>
+    $('.btn_click_load').click(function() {  //click to load comments
+        var disqus_config = function () {
+            this.page.url = 'http://yoursite.com/2017/04/05/Jos-lab2/index.html';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//null.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+  	
+
+    </div>
+    <style>
+        #disqus-comment{
+            background-color: #eee;
+            padding: 2pc;
+        }
+    </style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/03/20/Jos-lab1/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/home.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/myavatar.png" alt="Descatles's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        zephon-z@sjtu.edu.cn
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="http://mail.sjtu.edu.cn/" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/" target="_self">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        
+
+
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="http://weibo.com/u/5409070612/home?wvr=5&amp;lf=reg" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-weibo.png);">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/Descatles" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.png);">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/wei-lai-shi/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-zhihu.png);">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+        <a href="http://space.bilibili.com/8087472/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-bilibili.png);">
+                <span class="visuallyhidden">Bilibili</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;Descatles's Blog
+        </div>
+
+        
+
+        
+    
+</footer>
+
+
+                    <!-- Import File -->
+<script src="/js/lazyload.min.js"></script>
+<script src="/js/js.min.js"></script>
+<script src="/js/nprogress.js"></script>
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    <script src="/js/smoothscroll.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Swiftye -->
+
+
+<!-- Local Search-->
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+
+                </main>
+            </div>
+        </body>
+    
+</html>
