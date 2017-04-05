@@ -359,8 +359,8 @@
 <p>首先是BIOS加载。然后从BIOS跳转至Boot loader。Boot loader 做了一些初始化工作如禁止中断，打开 A20地址线等，然后载入GDT，并从实模式跳转到32位指令的保护模式下。在初始化了寄存器后，读取硬盘第一页上的ELF文件，将内核载入内存，最终进入内核。</p>
 <p>内核首先执行 entry.S 文件，entry.S 先将寻址模式从32位段模式转为32位段页模式，然后初始化栈空间，跳转到 i386_init中，接下来的过程都能够在终端中反映出来，在exercise中也会涉及到。</p>
 <p>其中，BIOS部分是由QEMU提供的，不属于JOS。</p>
-<p>###以下是对此次lab中一些问题以及设计的回答：</p>
-<p>#####<em>(1)    At what point does the processor start executing 32-bit code? What exactly causes the switch from 16- to 32-bit mode?</em></p>
+<p><strong>以下是对此次lab中一些问题以及设计的回答：</strong></p>
+<p><strong><em>(1)    At what point does the processor start executing 32-bit code? What exactly causes the switch from 16- to 32-bit mode?</em></strong></p>
 <pre><code>  # Jump to next instruction, but in 32-bit code segment.
   # Switches processor into 32-bit mode.
 
@@ -368,17 +368,17 @@
 
 .code32 # Assemble for 32-bit mode
 </code></pre><p> 从<code>.code32</code>开始，处理器执行32位的代码。<br><code>ljmp    $PROT_MODE_CSEG, $protcseg</code>指令使得从16位模式切换至32位模式。</p>
-<p>#####<em>(2)    What is the last instruction of the boot loader executed, and what is the first instruction of the kernel it just loaded?</em></p>
+<p><strong><em>(2)    What is the last instruction of the boot loader executed, and what is the first instruction of the kernel it just loaded?</em></strong></p>
 <p><code>(void (*)(void)) (ELFHDR-&gt;e_entry))();</code>这行代码是boot loader最后执行的代码，而最后一条执行的汇编指令为<code>call *0x10018</code><br>。Kernel刚加载时的第一条指令为<code>movw   $0x1234,0x472</code></p>
-<p>#####<em>(3)    How does the boot loader decide how many sectors it must read in order to fetch the entire kernel from disk? Where does it find this information?</em></p>
+<p><strong><em>(3)    How does the boot loader decide how many sectors it must read in order to fetch the entire kernel from disk? Where does it find this information?</em></strong></p>
 <p>Bootloader 在内核的ELF文件头中可以获得关于需要读多少sectors的信息。</p>
-<p>####<em>Exercise 5.</em></p>
+<p><strong>Exercise 5.</strong></p>
 <p>在从BIOS进入boot loader时，这8个words都是0。在从boot loader进入kernel后，则有真正的数据了。因为在第一个断点时还没有将内核代码载入至内存，第二个断点时则已经载入进去。在第二个断点时的内容是elf内核文件的内容。</p>
-<p>####<em>Exercise 6.</em></p>
+<p><strong>Exercise 6.</strong></p>
 <p>可以发现，修改只对相对跳转的语句有影响。</p>
-<p>####<em>Exercise 7.</em></p>
+<p><strong>Exercise 7.</strong></p>
 <p><code>Jmp *%eax</code> 是旧的mapping依旧存在时出错的第一条指令。</p>
-<p>####<em>Exercise 8.</em></p>
+<p><strong>Exercise 8.</strong></p>
 <p>照着前面的写即可，具体代码如下</p>
 <pre><code>case &apos;o&apos;:
             // Replace this with your code.
@@ -387,11 +387,11 @@
             num = getuint(&amp;ap, lflag);
             base = 8;
             goto number;
-</code></pre><p>####<em>Exercise 9.</em></p>
+</code></pre><p><strong>Exercise 9.</strong></p>
 <p>从<code>init.c</code>中的代码<code>cprintf(&quot;show me the sign: %+d, %+d\n&quot;, 1024, -1024);</code>中了解到，就是在有加号的情况下需要把正或负号全表示出来。所以只需加入一个对是否是加号的判断，若是，则在数字是正数时在前面加上正号。</p>
-<p>####<em>Exercise 10.</em></p>
+<p><strong>Exercise 10.</strong></p>
 <p>首先要判断要写入的值的指针是否是空指针，并判断指针要指向的值是否已溢出，若是，则输出已提供的错误信息。最后赋值。</p>
-<p>####<em>Exercise 11.</em></p>
+<p><strong>Exercise 11.</strong></p>
 <p>首先判断padc是否是’-‘，如果不是，按原来的函数处理，若是，进入新的函数。新的函数如下</p>
 <pre><code>static void
 printnum2(void (*putch)(int, void*), void *putdat,
@@ -412,7 +412,7 @@ while (--width &gt; 0)
     }    
 }
 </code></pre><p>即先输出数字的表示，不满的部分再用空格填补。</p>
-<p>####<em>Exercise 14.</em></p>
+<p><strong>Exercise 14.</strong></p>
 <p>代码如下</p>
 <pre><code>uint32_t *ebp = (uint32_t *) read_ebp();
 while (ebp != NULL) 
@@ -429,7 +429,7 @@ while (ebp != NULL)
     ebp = (uint32_t *) (*ebp);    
 }    
 </code></pre><p>用<code>read_ebp()</code>函数得到当前的ebp位置后，相对ebp向上得到eip以及各参数值，最后从ebp寄存器得到外部函数的保存的ebp位置，循环指指针为空。需要注意的是打印的格式。</p>
-<p>####<em>Exercise 15.</em></p>
+<p><strong>Exercise 15.</strong></p>
 <p>这个练习主要的部分只要在上个练习的循环中加入如下的代码：</p>
 <pre><code>struct Eipdebuginfo info;
 debuginfo_eip(*eip, &amp;info);
@@ -448,7 +448,7 @@ else
 }
 </code></pre><p>在<code>kdebug.c</code>中也要加入如下查找行号的代码。</p>
 <p>为了能直接使用<code>backtrace</code>命令而不只是通过测试，需要在<code>Command</code>中注册一下</p>
-<p>####<em>Exercise 16.</em></p>
+<p><strong>Exercise 16.</strong></p>
 <p>为了这个练习需要把<code>start_overflow()</code>中的return address替换为<code>do_overflow()</code>的地址，但因为要保证正常退出，需要把return address+4的地方填上本来应该返回的地址，以便从<code>do_overflow()</code>返回到本来应该返回的<code>overflow_me()</code></p>
 <p>代码如下：</p>
 <pre><code>char str[256] = {};
@@ -469,7 +469,7 @@ for(i=0;i&lt;4;i++)
     str[addr1]=&apos;\0&apos;;
     cprintf(&quot;%s%n&quot;, str, pret_addr+i);
 }
-</code></pre><p>####<em>Exercise 17.</em></p>
+</code></pre><p><strong>Exercise 17.</strong></p>
 <p>实际上就是调用rdtsc里的函数<code>read_tsc()</code>，计算下执行命令之间的cycle数并输出。也要在Command中注册下。</p>
 <p>代码如下：</p>
 <pre><code>int

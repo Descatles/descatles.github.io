@@ -379,14 +379,14 @@
 <p>对于上述所涉及的函数（boot_map_region_large除外）都只需要照着文件中的注释写即可，<br>故不多做解释。</p>
 <p>接着上一个lab的内容，并调用 i386_init()函数，而 i386_init()函数在将自己的 BSS 区域清零后，调用 cons_init()函数设置好屏幕显示设备为 cprintf 的运行做好准备后就调用 mem_init()函数进入lab2。</p>
 <p>lab中所涉及到的内存的分页机制包含页面管理和页表管理两个部分。对于前一个部分，主要是讨论内核如何在初始物理内存中分配空间和建立合理的数据结构来对物理页面进行管理，而后一个部分主要是讨论如何建立两级页目录和页表，从而在开启 x86 的分页管理后仍然能够进行合理的逻辑地址到物理地址的转换。</p>
-<p>###页面管理</p>
+<p><strong>页面管理</strong></p>
 <p>这个Page是这个lab中很重要的一个单项链表结构，用来管理物理内存。其中pp_link指向链表的下一个单元的地址，pp_ref则表示页表结构中映射到该段物理页的entry数量，通过该结构可以完成这个lab的很多事情。</p>
 <pre><code>struct Page {
     struct Page *pp_link;
     uint16_t pp_ref;
 };
 </code></pre><p>在 JOS 中，页面操作主要由 page_alloc()以及page_free()完成。同时，还要进行页面的初始化。由于系统的物理内存由 4KB 大小的很多物理页面组成，同时这些物理页面与页面管理单向链表中的管理结点有一一对应的关系，根据一个物理页的首地址可以计算出它所对应的管理结点的位置，可以用 pages[下标]来索引。在页面管理数据结构初试化的时候，系统会把所有管理结点加入页面管理链表，但是，由于有些物理内存已经被 x86 系统所使用或者预先放了一些系统数据。同时，有些内存已为内核本身所占用，这些内存不能把它们当自由页面分配出去。所以，在建立好页面管理链表后，需要将这些已经被使用的内存对应的页面管理结点从链表中移出。page_alloc()函数被调用后，将取页面管理双向链表中的第一个管理结点，并将该结点返回出去，需要注意的是，由于无法确定得到的物理内存页面是否是“干净”的，如果已经有数据，就会对之后的程序造成影响。所以得到页面管理结点后，要将它所对应的物理页面清零。</p>
-<p>###页表管理</p>
+<p><strong>页表管理</strong></p>
 <p>lab中有提到逻辑地址（ Virtual Address）、线性地址(Linear Address)和物理地址(Physical Address)。逻辑地址是指程序在编译连接后，变量名字等的符号地址， 在 JOS 系统中的内核部分， 该地址是以 KERNBASE（默认等于 0xF0000000，实际上可以根据具体的情况加以修改）；线性地址是指经过 x86 保护模式的段地址变换后的地址，该变换的过程是 逻辑地址+段首地址；物理地址是指内存存储单元的编址，如 1GB<br>的内存，它的物理编址是从 0x00000000 到 0x40000000。</p>
 <p>关于线性地址的转换，在ics课上已经讲过，就不说了。</p>
 <p>关于第二部分的函数，主要就是用于处理对页目录、页表和数据页的关联。这里稍微解释一下：</p>
@@ -395,7 +395,7 @@
 <p><code>struct Page *page_lookup(pde_t *pgdir, void *va, pte_t **pte_store)</code>根据va，返回对应的页表的页，如果有pte_store，则将对应的pte的位置保存pte_store上。</p>
 <p><code>void page_remove(pde_t *pgdir, void *va)</code>删除给定va对应的页表，同时也要清除对应的TLB。</p>
 <p><code>int page_insert(pde_t *pgdir, struct Page *pp, void *va, int perm)</code>这个函数将虚拟地址va映射到pp对应的页表上，如果没有分配就直接映射va，如果页表已分配先判断是否映射va相同的虚拟地址，如果是就只删除对应的TLB，如果不是就直接remove。</p>
-<p>###部分函数代码</p>
+<p><strong>部分函数代码</strong></p>
 <p>因为代码过多，只贴出其中几个。其余基本代码可以在提交的代码中查看。</p>
 <p>关于boot_map_region_large（）</p>
 <pre><code>  uint32_t cr4;
@@ -418,7 +418,7 @@ boot_map_region_large(pde_t *pgdir, uintptr_t va, size_t size, physaddr_t pa, in
     }
 }
 </code></pre><p>需要用这个boot_map_region_large（）替代boot_map_region()。先开启CR4中的PSE位以此使用PDE的PS位。通过分配PDE，替代了二级页表的分配。通过计算可以得出只需要64的PDE表项。</p>
-<p>###Challenge1(1)</p>
+<p><strong>Challenge1(1)</strong></p>
 <p>主要是要实现一个showmapping的命令，改命令可以打出指定范围内每个页所对应的权限位</p>
 <p>主要实现如下，只需要遍历一下范围地址里在二级页表里的entry并输出权限位即可。</p>
 <pre><code>int
@@ -450,7 +450,7 @@ showmappings(int argc, char **argv, struct Trapframe *tf)
     }
     return 0;
 }
-</code></pre><p>###Challenge1(2)</p>
+</code></pre><p><strong>Challenge1(2)</strong></p>
 <p>实现对一个地址页表权限位的设置，清零与更改，也不难。</p>
 <p>得到一个地址所对应的二级页表后，根据所输入的指令更改页表里的权限位，实现如下：</p>
 <pre><code>int 
@@ -492,7 +492,7 @@ setmapping(int argc, char **argv, struct Trapframe *tf)
     cprintf(&quot;After setmapping :PTE_P: %x, PTE_W: %x, PTE_U: %x\n&quot;, *pte&amp;PTE_P, *pte&amp;PTE_W, *pte&amp;PTE_U);
     return 0;
 }
-</code></pre><p>###Challenge1(3)</p>
+</code></pre><p><strong>Challenge1(3)</strong></p>
 <p>把地址范围内内存里的内容打印出来，并且支持虚拟地址与物理地址。如果是物理地址，转换为虚拟地址即可。</p>
 <pre><code>int 
 mon_dump(int argc, char **argv, struct Trapframe *tf) 
@@ -522,7 +522,7 @@ mon_dump(int argc, char **argv, struct Trapframe *tf)
     }
     return 0;
 }
-</code></pre><p>###Challenge2</p>
+</code></pre><p><strong>Challenge2</strong></p>
 <p>实现一个称作alloc_page_with_color的函数，返回一个所需要的color的页。这个函数需要遍历page_free_list直到得到所需要的color的页，并返回。</p>
 <pre><code>struct Page *alloc_page_with_color(int alloc_flags, int color)
 {
